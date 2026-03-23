@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Mis Tareas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="phone-frame">
+
+    <header>
+      <div class="greeting">📋 JSONPlaceholder API</div>
+      <h1>Mis <span>Tareas</span></h1>
+    </header>
+
+    <div class="stats-row">
+      <div class="stat-chip">Total: <strong id="statTotal">0</strong></div>
+      <div class="stat-chip">✅ Hechas: <strong id="statDone">0</strong></div>
+      <div class="stat-chip">⏳ Pendientes: <strong id="statPending">0</strong></div>
+    </div>
+
+    <div class="add-section">
+      <div class="add-row">
+        <input type="text" id="newTask" placeholder="Nueva tarea..." maxlength="120" />
+        <button class="btn-add" onclick="addTask()" title="Agregar">+</button>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" onclick="setFilter('all', this)">Todas</button>
+      <button class="tab" onclick="setFilter('pending', this)">Pendientes</button>
+      <button class="tab" onclick="setFilter('done', this)">Completadas</button>
+    </div>
+
+    <div class="error-msg" id="errorMsg"></div>
+
+    <div class="task-list" id="taskList">
+      <div class="loader">
+        <div class="spinner"></div>
+        <span>Cargando tareas...</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
